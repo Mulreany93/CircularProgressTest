@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FfF-QD-Wa9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KDCircularProgressExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ghF-CJ-0yv"/>
+                        <viewControllerLayoutGuide type="bottom" id="o67-py-2aK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-rT-xmd">
+                                <rect key="frame" x="0.0" y="538" width="30" height="30"/>
+                                <connections>
+                                    <action selector="Animate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yv6-h9-ghL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Score" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bzg-d1-3B2">
+                                <rect key="frame" x="40" y="47" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92046384162303663" green="0.92046384162303663" blue="0.92046384162303663" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bzg-d1-3B2" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="It3-xS-YKc"/>
+                            <constraint firstItem="o67-py-2aK" firstAttribute="top" secondItem="Bzg-d1-3B2" secondAttribute="bottom" constant="393" id="OLl-eh-xrV"/>
+                            <constraint firstItem="Bzg-d1-3B2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="j7T-DS-Mnu"/>
+                            <constraint firstItem="Bzg-d1-3B2" firstAttribute="top" secondItem="ghF-CJ-0yv" secondAttribute="bottom" constant="27" id="jgV-GH-124"/>
+                            <constraint firstItem="Ucs-rT-xmd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="smx-ZG-bLI"/>
+                            <constraint firstItem="o67-py-2aK" firstAttribute="top" secondItem="Ucs-rT-xmd" secondAttribute="bottom" id="zSn-07-pB2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dwd-1r-tak"/>
+                    <connections>
+                        <outlet property="scoretext" destination="Bzg-d1-3B2" id="3wH-KB-JXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="363"/>
+        </scene>
+        <!--View Controller Home-->
+        <scene sceneID="zSd-rl-RbW">
+            <objects>
+                <viewController id="FfF-QD-Wa9" customClass="ViewControllerHome" customModule="KDCircularProgressExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lv2-a7-k0H"/>
+                        <viewControllerLayoutGuide type="bottom" id="veD-T6-y5H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ghG-XY-jO9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-Rm-ohb">
+                                <rect key="frame" x="109" y="157" width="103" height="30"/>
+                                <state key="normal" title="Show Progress"/>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" id="uOd-6g-Vus"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-6r-XFA">
+                                <rect key="frame" x="140" y="374" width="40" height="30"/>
+                                <state key="normal" title="Score"/>
+                                <connections>
+                                    <action selector="counter:" destination="FfF-QD-Wa9" eventType="touchUpInside" id="VPd-8k-wVI"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Score" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Ol-o3-OSe">
+                                <rect key="frame" x="40" y="227" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="59j-o9-L8b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Ol-o3-OSe" firstAttribute="top" secondItem="UDk-Rm-ohb" secondAttribute="bottom" constant="40" id="CL9-JR-gbR"/>
+                            <constraint firstItem="5Ol-o3-OSe" firstAttribute="centerX" secondItem="NWd-6r-XFA" secondAttribute="centerX" id="H6d-ix-5u7"/>
+                            <constraint firstItem="5Ol-o3-OSe" firstAttribute="centerX" secondItem="UDk-Rm-ohb" secondAttribute="centerX" id="NZm-UI-ZZz"/>
+                            <constraint firstItem="NWd-6r-XFA" firstAttribute="top" secondItem="5Ol-o3-OSe" secondAttribute="bottom" constant="19" id="f0o-qa-Bnq"/>
+                            <constraint firstItem="UDk-Rm-ohb" firstAttribute="centerX" secondItem="ghG-XY-jO9" secondAttribute="centerX" id="gmg-5z-mmI"/>
+                            <constraint firstItem="UDk-Rm-ohb" firstAttribute="top" secondItem="Lv2-a7-k0H" secondAttribute="bottom" constant="137" id="m6P-96-qwJ"/>
+                            <constraint firstItem="5Ol-o3-OSe" firstAttribute="leading" secondItem="ghG-XY-jO9" secondAttribute="leadingMargin" constant="24" id="xXP-mu-egu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scorebutton" destination="NWd-6r-XFA" id="3lr-kU-Bk9"/>
+                        <outlet property="scorelbl" destination="5Ol-o3-OSe" id="eA7-Wx-pft"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRN-hH-fde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="363"/>
+        </scene>
+    </scenes>
+</document>
